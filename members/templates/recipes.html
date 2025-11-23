@@ -1,0 +1,238 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes - RecipeHub</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/recipes.css' %}">
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <nav>
+    <div class="logo">
+      <i class="fas fa-utensils"></i> RecipeHub
+    </div>
+    <div class="menu">
+      <a href="/">Home</a>
+      <a href="/recipes" class="active">Recipes</a>
+      <a href="/categories">Categories</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>Our Best <span class="text-primary">Recipes</span></h1>
+  <p>Explore thousands of delicious, chef-crafted dishes from all around the world.</p>
+</section>
+
+<!-- Recipes Grid -->
+<section class="recipes-grid">
+  <div class="recipe-card">
+    <div class="relative">
+      <img src="{% static 'images/ginataang_sugpo.jpg' %}" alt="Creamy Garlic Pasta">
+      <div class="time-badge time-primary"><i class="fas fa-clock"></i> 30 min</div>
+    </div>
+    <div class="card-content">
+      <h3>Ginataang Sugpo</h3>
+      <p>Head-on prawns are cooked in an aromatic coconut broth infused with lemongrass, anchovies, ginger, and chiles. </p>
+      <div class="card-footer">
+        <div class="rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+          <span>(89)</span>
+        </div>
+        <button>View Recipe</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="recipe-card">
+    <div class="relative">
+      <img src="{% static 'images/lumpia.jpg' %}" alt="Honey Glazed Salmon">
+      <div class="time-badge time-accent"><i class="fas fa-clock"></i> 45 min</div>
+    </div>
+    <div class="card-content">
+      <h3>Lumpiang Shanghai</h3>
+      <p>These crispy Filipino egg rolls are filled with an aromatic pork filling, and served with your choice of dipping sauce.</p>
+      <div class="card-footer">
+        <div class="rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <span>(122)</span>
+        </div>
+        <button>View Recipe</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="recipe-card">
+    <div class="relative">
+      <img src="{% static 'images/chicken_adobo.jpg' %}" alt="Chocolate Mousse">
+      <div class="time-badge time-secondary"><i class="fas fa-clock"></i> 20 min</div>
+    </div>
+    <div class="card-content">
+      <h3>Chicken Adobo</h3>
+      <p>Featuring chicken braised in a savory and tangy sauce of soy sauce, vinegar, and garlic, along with bay leaves and black peppercorns.</p>
+      <div class="card-footer">
+        <div class="rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <span>(67)</span>
+        </div>
+        <button>View Recipe</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="recipe-card">
+    <div class="relative">
+      <img src="{% static 'images/mango-royale.webp' %}" alt="Spaghetti Carbonara">
+      <div class="time-badge time-primary"><i class="fas fa-clock"></i> 25 min</div>
+    </div>
+    <div class="card-content">
+      <h3>Mango Royale</h3>
+      <p>Mango Royale is a popular Filipino icebox cake layered with graham crackers, cream, sweetened condensed milk, and ripe yellow mangoes.</p>
+      <div class="card-footer">
+        <div class="rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+          <span>(105)</span>
+        </div>
+        <button>View Recipe</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="recipe-card">
+    <div class="relative">
+      <img src="{% static 'images/bola-bola.jpg' %}" alt="Thai Green Curry">
+      <div class="time-badge time-accent"><i class="fas fa-clock"></i> 35 min</div>
+    </div>
+    <div class="card-content">
+      <h3>Bola Bola</h3>
+      <p>Bola-bola can be served a number of ways. You can pile them onto a platter and serve them with an assortment of dipping sauces, like sweet chili sauce and spiced vinegar.</p>
+      <div class="card-footer">
+        <div class="rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <span>(98)</span>
+        </div>
+        <button>View Recipe</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="recipe-card">
+    <div class="relative">
+      <img src="{% static 'images/spaghetti.webp' %}" alt="Tiramisu">
+      <div class="time-badge time-secondary"><i class="fas fa-clock"></i> 15 min</div>
+    </div>
+    <div class="card-content">
+      <h3>Spaghetti</h3>
+      <p>Made with hot dogs, ketchup, and ground beef, it’s the ultimate Filipino comfort food.</p>
+      <div class="card-footer">
+        <div class="rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <span>(156)</span>
+        </div>
+        <button>View Recipe</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="recipe-card">
+    <div class="relative">
+      <img src="{% static 'images/sinigang.webp' %}" alt="Thai Green Curry">
+      <div class="time-badge time-accent"><i class="fas fa-clock"></i> 35 min</div>
+    </div>
+    <div class="card-content">
+      <h3>Sinigang na Baboy</h3>
+      <p>This weeknight dinner staple, packed with pork spareribs and hearty vegetables, is a favorite in Filipino homes.</p>
+      <div class="card-footer">
+        <div class="rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <span>(98)</span>
+        </div>
+        <button>View Recipe</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="recipe-card">
+    <div class="relative">
+      <img src="{% static 'images/carbonara.webp' %}" alt="Tiramisu">
+      <div class="time-badge time-secondary"><i class="fas fa-clock"></i> 15 min</div>
+    </div>
+    <div class="card-content">
+      <h3>Carbonara</h3>
+      <p>Think of it as a mash-up of fettuccine Alfredo and spaghetti carbonara — but with mushrooms.</p>
+      <div class="card-footer">
+        <div class="rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <span>(156)</span>
+        </div>
+        <button>View Recipe</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="text-align:center; margin-top:2rem;">
+  <button class="view-more-btn">View More Recipes</button>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="logo"><i class="fas fa-utensils"></i> RecipeHub</div>
+      <p>Your destination for delicious meals and cooking inspiration.</p>
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <a href="/">Home</a><br>
+      <a href="#">Recipes</a><br>
+      <a href="#">Categories</a><br>
+      <a href="/about">About</a>
+    </div>
+    <div>
+      <h3>Categories</h3>
+      <a href="#">Breakfast</a><br>
+      <a href="#">Lunch</a><br>
+      <a href="#">Dinner</a><br>
+      <a href="#">Desserts</a>
+    </div>
+    <div>
+      <h3>Follow Us</h3>
+      <div class="social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:2rem; color:#cbd5e0;">
+    &copy; 2024 RecipeHub. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>

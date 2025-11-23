@@ -1,0 +1,170 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Recipes</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="{% static 'css/home.css' %}" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <nav>
+    <div class="logo">
+      <i class="fas fa-utensils"></i>
+      RecipeHub
+    </div>
+    <div class="menu">
+      <a href="/">Home</a>
+      <a href="/recipes">Recipes</a>
+      <a href="/categories">Categories</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <div class="buttons">
+      <button class="signin" onclick="window.location.href='login/'">Sign In</button>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="content">
+    <h1>Discover Amazing <span class="primary">Recipes</span></h1>
+    <p>Find thousands of delicious recipes from professional chefs and home cooks.</p>
+    <div class="buttons">
+      <button class="explore">Explore Recipes</button>
+      <button class="tutorials">Watch Tutorials</button>
+    </div>
+  </div>
+  <div class="image slideshow">
+    <div class="slides">
+      <img src="{% static 'images/ginataang_sugpo.jpg' %}" alt="Filipino Food 1">
+      <img src="{% static 'images/lumpia.jpg' %}" alt="Filipino Food 2">
+      <img src="{% static 'images/chicken_adobo.jpg' %}" alt="Filipino Food 3">
+    </div>
+  </div>
+</section>
+
+<!-- Featured Recipes -->
+<section class="cards">
+  <div class="card">
+    <img src="{% static 'images/pancit.webp' %}" alt="Classic Italian Pasta">
+    <div class="info">
+      <h3>Pancit Bihon</h3>
+      <p>Looking for your next crowd-pleaser? This recipe is the perfect dish to bring to potlucks and dinner parties. </p>
+      <div class="rating">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+        <span>(100)</span>
+      </div>
+      <button>View Recipe</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="{% static 'images/halo-halo.webp' %}" alt="Grilled Salmon">
+    <div class="info">
+      <h3>Halo Halo</h3>
+      <p>The words “halo-halo” translate to “mix-mix” because before you eat the treat, you mix everything up.</p>
+      <div class="rating">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <span>(150)</span>
+      </div>
+      <button>View Recipe</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="{% static 'images/mechado_beef-stew.webp' %}" alt="Chocolate Lava Cake">
+    <div class="info">
+      <h3>Mechado Beef Stew</h3>
+      <p>A hearty beef chuck stew with potatoes and carrots in a rich tomato sauce, perfect over steamed white rice.</p>
+      <div class="rating">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <span>(106)</span>
+      </div>
+      <button>View Recipe</button>
+    </div>
+  </div>
+</section>
+
+<!-- Categories -->
+<section class="categories">
+  <div class="category">
+    <i class="fas fa-egg" style="color:#e53e3e;"></i>
+    <h3>Breakfast</h3>
+    <p>245 recipes</p>
+  </div>
+  <div class="category">
+    <i class="fas fa-hamburger" style="color:#38a169;"></i>
+    <h3>Lunch</h3>
+    <p>389 recipes</p>
+  </div>
+  <div class="category">
+    <i class="fas fa-utensils" style="color:#ed8936;"></i>
+    <h3>Dinner</h3>
+    <p>512 recipes</p>
+  </div>
+  <div class="category">
+    <i class="fas fa-ice-cream" style="color:#805ad5;"></i>
+    <h3>Desserts</h3>
+    <p>198 recipes</p>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter">
+  <h2>Get Weekly Recipe Inspiration</h2>
+  <p>Join our newsletter and receive new recipes every week directly in your inbox</p>
+  <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:1rem;">
+    <input type="email" placeholder="Enter your email">
+    <button>Subscribe</button>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:2rem;">
+    <div>
+      <div class="logo">
+        <i class="fas fa-utensils"></i> RecipeHub
+      </div>
+      <p>Your ultimate destination for delicious recipes and cooking inspiration.</p>
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <a href="/">Home</a><br>
+      <a href="/recipes">Recipes</a><br>
+      <a href="/categories">Categories</a><br>
+      <a href="/about">About Us</a>
+    </div>
+    <div>
+      <h3>Categories</h3>
+      <a href="#">Breakfast</a><br>
+      <a href="#">Lunch</a><br>
+      <a href="#">Dinner</a><br>
+      <a href="#">Desserts</a>
+    </div>
+    <div>
+      <h3>Connect With Us</h3>
+      <div class="social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-pinterest"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:2rem; color:#cbd5e0;">
+    &copy; 2024 RecipeHub. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - RecipeHub</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="{% static 'css/contact.css' %}" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <nav>
+    <div class="logo">
+      <i class="fas fa-utensils"></i>
+      RecipeHub
+    </div>
+    <div class="menu">
+      <a href="/">Home</a>
+      <a href="/recipes">Recipes</a>
+      <a href="/categories">Categories</a>
+      <a href="/about">About</a>
+      <a href="/contact" class="active">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>Contact Us</h1>
+  <p>Have questions, suggestions, or feedback? We’d love to hear from you.</p>
+</section>
+
+<!-- Contact Form -->
+<section class="contact-form">
+  <h2>Send Us a Message</h2>
+  <form>
+    <label>Full Name</label>
+    <input type="text" placeholder="Enter your name">
+
+    <label>Email Address</label>
+    <input type="email" placeholder="Enter your email">
+
+    <label>Subject</label>
+    <input type="text" placeholder="Message subject">
+
+    <label>Message</label>
+    <textarea rows="6" placeholder="Type your message here..."></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<!-- Contact Info -->
+<section class="contact-info">
+  <div class="info-box">
+    <i class="fas fa-envelope"></i>
+    <h3>Email</h3>
+    <p>support@recipehub.com</p>
+  </div>
+  <div class="info-box">
+    <i class="fas fa-phone"></i>
+    <h3>Phone</h3>
+    <p>+1 (234) 567-890</p>
+  </div>
+  <div class="info-box">
+    <i class="fas fa-map-marker-alt"></i>
+    <h3>Location</h3>
+    <p>123 Food Lovers Street, Culinary City</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:2rem;">
+    <div>
+      <div class="logo">
+        <i class="fas fa-utensils"></i> RecipeHub
+      </div>
+      <p>Your destination for delicious meals and cooking inspiration.</p>
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <a href="/">Home</a><br>
+      <a href="/recipes">Recipes</a><br>
+      <a href="/categories">Categories</a><br>
+      <a href="/about">About</a><br>
+      <a href="/contact">Contact</a>
+    </div>
+    <div>
+      <h3>Categories</h3>
+      <a href="#">Breakfast</a><br>
+      <a href="#">Lunch</a><br>
+      <a href="#">Dinner</a><br>
+      <a href="#">Desserts</a>
+    </div>
+    <div>
+      <h3>Follow Us</h3>
+      <div class="social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:2rem; color:#cbd5e0;">
+    &copy; 2024 RecipeHub. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>

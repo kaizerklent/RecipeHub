@@ -1,0 +1,339 @@
+/* Fonts */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f9fafb;
+    margin: 0;
+    padding: 0;
+}
+
+.font-display {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Header */
+header {
+    background-color: white;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem 2rem;
+}
+
+header nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #1a202c;
+}
+
+header nav .logo i {
+    width: 40px;
+    height: 40px;
+    background-color: #e53e3e;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header nav .menu a {
+    margin: 0 0.5rem;
+    color: #4a5568;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+header nav .menu a:hover {
+    color: #e53e3e;
+}
+
+header nav .buttons button {
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+header nav .buttons .signin {
+    background-color: #e53e3e;
+    color: white;
+    border: none;
+}
+
+header nav .buttons .signin:hover {
+    background-color: #c53030;
+}
+
+/* Hero Section */
+.hero {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero .content {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1a202c;
+}
+
+.hero h1 .primary {
+    color: #e53e3e;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #718096;
+}
+
+.hero .buttons button {
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.hero .buttons .explore {
+    background-color: #e53e3e;
+    color: white;
+    border: none;
+}
+
+.hero .buttons .explore:hover {
+    background-color: #c53030;
+}
+
+.hero .buttons .tutorials {
+    border: 2px solid #e53e3e;
+    background: white;
+    color: #e53e3e;
+}
+
+.hero .buttons .tutorials:hover {
+    background-color: #e53e3e;
+    color: white;
+}
+
+/* Slider Section */
+.hero .image.slideshow {
+    width: 780px;           /* Fixed smaller width */
+    max-width: 90%;         /* Responsive cap on small screens */
+    height: 320px;          /* Adjust height as needed */
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 2rem auto 0 auto;
+}
+
+.hero .slides {
+    display: flex;
+    width: calc(100% * 3); /* three slides */
+    animation: slide 18s infinite ease-in-out; /* slower, smoother loop */
+}
+
+/* Hold each slide visible for a longer period, then quickly transition */
+@keyframes slide {
+    0% { transform: translateX(0%); }
+    28% { transform: translateX(0%); }           /* hold first slide */
+    33% { transform: translateX(-33.333%); }     /* move to second */
+    61% { transform: translateX(-33.333%); }     /* hold second slide */
+    66% { transform: translateX(-66.666%); }     /* move to third */
+    94% { transform: translateX(-66.666%); }     /* hold third slide */
+    100% { transform: translateX(0%); }          /* back to start */
+}
+
+/* Ensure each image occupies exactly one slide frame */
+.hero .slides > img {
+    flex: 0 0 100%; /* each image is one slide frame */
+    width: auto;           /* let width scale to preserve aspect */
+    max-width: 500px;
+    object-fit: contain;  /* show whole image without cropping */
+    object-position: center;
+    display: block;
+    margin: 0 auto;       /* center horizontally when letterboxed */
+    border-radius: 15px;
+    background-color: #f9fafb; /* fill any empty space to match page bg */
+}
+
+
+/* Recipe Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 1.5rem;
+    padding: 3rem 2rem;
+}
+
+.card {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+}
+
+.card .info {
+    padding: 1rem;
+}
+
+.card .info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #1a202c;
+}
+
+.card .info p {
+    color: #718096;
+    margin-bottom: 1rem;
+}
+
+.card .info .rating {
+    color: #ecc94b;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.card .info button {
+    background: none;
+    border: none;
+    font-weight: 600;
+    color: #e53e3e;
+    cursor: pointer;
+}
+
+.card .info button:hover {
+    color: #c53030;
+}
+
+/* Categories */
+.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 1.5rem;
+    padding: 4rem 2rem;
+}
+
+.categories .category {
+    background: white;
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.categories .category:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.categories .category i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Newsletter */
+.newsletter {
+    background-color: #e53e3e;
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.newsletter input[type="email"] {
+    padding: 0.75rem 1rem;
+    border-radius: 9999px;
+    border: none;
+    margin-right: 1rem;
+    flex: 1;
+}
+
+.newsletter button {
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    background: white;
+    color: #e53e3e;
+}
+
+.newsletter button:hover {
+    background: #f7fafc;
+}
+
+/* Footer */
+footer {
+    background-color: #1a202c;
+    color: #cbd5e0;
+    padding: 3rem 2rem;
+}
+
+footer h3 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+footer a {
+    color: #a0aec0;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: white;
+}
+
+footer .social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    background: #4a5568;
+    color: white;
+    margin-right: 0.5rem;
+    transition: background 0.3s ease;
+}
+
+footer .social a:hover {
+    background: #e53e3e;
+}
