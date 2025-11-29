@@ -10,27 +10,38 @@
 </head>
 <body>
 
-<!-- Header -->
+<!-- Header / Navbar -->
 <header>
   <nav>
     <div class="logo">
-      <i class="fas fa-utensils"></i>
-      RecipeHub
+      <i class="fas fa-utensils"></i> RecipeHub
     </div>
     <div class="menu">
       <a href="/">Home</a>
-      <a href="/recipes">Recipes</a>
+      <a href="{% url 'recipes' %}">Recipes</a>
       <a href="/categories">Categories</a>
       <a href="/about">About</a>
       <a href="/contact">Contact</a>
     </div>
     <div class="buttons">
-      <button class="signin" onclick="window.location.href='login/'">Sign In</button>
+      {% if user %}
+        <!-- User is logged in: show profile picture -->
+        <div class="profile-menu">
+          <img src="{% static 'images/profile_default.png' %}" 
+               alt="{{ user.name }}" 
+               onclick="window.location.href='{% url 'profile' %}'"
+               style="width:40px; height:40px; border-radius:50%; cursor:pointer;">
+        </div>
+      {% else %}
+        <!-- User is not logged in -->
+        <button class="signin" onclick="window.location.href='{% url 'login' %}'">Login</button>
+        <button class="signup" onclick="window.location.href='{% url 'register' %}'">Sign Up</button>
+      {% endif %}
     </div>
   </nav>
 </header>
 
-<!-- Hero -->
+<!-- Hero Section -->
 <section class="hero">
   <div class="content">
     <h1>Discover Amazing <span class="primary">Recipes</span></h1>
@@ -52,10 +63,10 @@
 <!-- Featured Recipes -->
 <section class="cards">
   <div class="card">
-    <img src="{% static 'images/pancit.webp' %}" alt="Classic Italian Pasta">
+    <img src="{% static 'images/pancit.webp' %}" alt="Pancit Bihon">
     <div class="info">
       <h3>Pancit Bihon</h3>
-      <p>Looking for your next crowd-pleaser? This recipe is the perfect dish to bring to potlucks and dinner parties. </p>
+      <p>Looking for your next crowd-pleaser? This recipe is perfect for potlucks and dinner parties.</p>
       <div class="rating">
         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
         <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
@@ -66,10 +77,10 @@
   </div>
 
   <div class="card">
-    <img src="{% static 'images/halo-halo.webp' %}" alt="Grilled Salmon">
+    <img src="{% static 'images/halo-halo.webp' %}" alt="Halo Halo">
     <div class="info">
       <h3>Halo Halo</h3>
-      <p>The words “halo-halo” translate to “mix-mix” because before you eat the treat, you mix everything up.</p>
+      <p>The words “halo-halo” translate to “mix-mix” before eating the treat, you mix everything up.</p>
       <div class="rating">
         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
         <i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -80,7 +91,7 @@
   </div>
 
   <div class="card">
-    <img src="{% static 'images/mechado_beef-stew.webp' %}" alt="Chocolate Lava Cake">
+    <img src="{% static 'images/mechado_beef-stew.webp' %}" alt="Mechado Beef Stew">
     <div class="info">
       <h3>Mechado Beef Stew</h3>
       <p>A hearty beef chuck stew with potatoes and carrots in a rich tomato sauce, perfect over steamed white rice.</p>
@@ -140,7 +151,7 @@
     <div>
       <h3>Quick Links</h3>
       <a href="/">Home</a><br>
-      <a href="/recipes">Recipes</a><br>
+      <a href="{% url 'recipes' %}">Recipes</a><br>
       <a href="/categories">Categories</a><br>
       <a href="/about">About Us</a>
     </div>

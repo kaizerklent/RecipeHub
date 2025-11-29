@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile - RecipeHub</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="{% static 'css/home.css' %}" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <nav>
+    <div class="logo">
+      <i class="fas fa-utensils"></i> RecipeHub
+    </div>
+    <div class="menu">
+      <a href="/">Home</a>
+      <a href="{% url 'recipes' %}">Recipes</a>
+      <a href="/categories">Categories</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <div class="buttons">
+      <button class="signin" onclick="window.location.href='/logout/'">Logout</button>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero" style="min-height:250px; display:flex; align-items:center;">
+  <div class="content">
+    <h1>Edit Your Profile</h1>
+    <p>Update your account information below.</p>
+  </div>
+</section>
+
+<!-- Edit Profile Form -->
+<section class="cards" style="padding-top:0;">
+  <div class="card" style="max-width:400px; margin:auto; text-align:center;">
+    <img src="{% static 'images/profile_default.png' %}" 
+         alt="Profile"
+         style="width:150px; height:150px; border-radius:50%; object-fit:cover; margin:auto;">
+
+    <div class="info" style="text-align:left; margin-top:1rem;">
+      <form method="POST" action="{% url 'edit-profile' %}">
+        {% csrf_token %}
+        <div style="margin-bottom:1rem;">
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" value="{{ user.name }}" required style="width:100%; padding:0.5rem; margin-top:0.3rem;">
+        </div>
+
+        <div style="margin-bottom:1rem;">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" value="{{ user.email }}" required style="width:100%; padding:0.5rem; margin-top:0.3rem;">
+        </div>
+
+        <button type="submit" class="btn-primary" style="width:100%;">Save Changes</button>
+      </form>
+
+      <div style="margin-top:1rem; text-align:center;">
+        <button onclick="window.location.href='{% url 'profile' %}'">Cancel</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:2rem;">
+    <div>
+      <div class="logo">
+        <i class="fas fa-utensils"></i> RecipeHub
+      </div>
+      <p>Your ultimate destination for delicious recipes and cooking inspiration.</p>
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <a href="/">Home</a><br>
+      <a href="{% url 'recipes' %}">Recipes</a><br>
+      <a href="/categories">Categories</a><br>
+      <a href="/about">About Us</a>
+    </div>
+    <div>
+      <h3>Categories</h3>
+      <a href="#">Breakfast</a><br>
+      <a href="#">Lunch</a><br>
+      <a href="#">Dinner</a><br>
+      <a href="#">Desserts</a>
+    </div>
+    <div>
+      <h3>Connect With Us</h3>
+      <div class="social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-pinterest"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:2rem; color:#cbd5e0;">
+    &copy; 2024 RecipeHub. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>
